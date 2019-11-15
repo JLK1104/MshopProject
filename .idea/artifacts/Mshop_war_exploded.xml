@@ -1,0 +1,31 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Mshop:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Mshop_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Mshop" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="application" name="commons-beanutils-1.9.4" />
+          <element id="file-copy" path="$PROJECT_DIR$/../资源文件/jstl/javax.servlet.jsp.jstl.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../资源文件/jstl/jstl-impl.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../资源文件/测试/junit.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../资源文件/数据库驱动/mysql-connector-java-5.1.7-bin.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Resource/jstl/javax.servlet.jsp.jstl.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Resource/jstl/jstl-impl.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Resource/数据库驱动/mysql-connector-java-5.1.7-bin.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Resource/测试/junit.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Resource/json开发包/commons-beanutils-1.9.4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Resource/json开发包/commons-lang-2.6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Resource/json开发包/commons-httpclient-3.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Resource/json开发包/commons-collections-3.2.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Resource/json开发包/commons-logging-1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Resource/json开发包/ezmorph-1.0.6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Resource/json开发包/json-lib-2.4-jdk15.jar" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="Mshop/web/Web" />
+    </root>
+  </artifact>
+</component>

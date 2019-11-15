@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/Mshop" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Mshop/src/cn/jlk/Service/back/Impl/IAdminServiceBackImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Mshop/src/cn/jlk/Servlet/MemberServletBack.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Mshop/src/cn/jlk/Servlet/MemberServletfront.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Mshop/src/cn/jlk/Servlet/SplitPageServlet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Mshop/src/cn/jlk/dbc/DataBaseConnection.java" charset="UTF-8" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>

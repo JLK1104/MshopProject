@@ -12,7 +12,7 @@ import cn.jlk.Idao.Imemberdao;
 import cn.jlk.Util.AbstractDAOImpl;
 import cn.jlk.VO.Member;
 /**
- * memberµÄÕæÊµÊµÏÖÀà
+ * memberçš„çœŸå®å®ç°ç±»
  * @author JLK1104
  *
  */
@@ -192,11 +192,11 @@ public class MemberImpl extends AbstractDAOImpl implements Imemberdao{
 		while (iter.hasNext()) {
 			super.pstmt.setInt(1, status);
 			super.pstmt.setString(2, iter.next());
-			super.pstmt.addBatch();//Ôö¼Óµ½Åú´¦ÀíÖ®ÖĞ
+			super.pstmt.addBatch();//å¢åŠ åˆ°æ‰¹å¤„ç†ä¹‹ä¸­
 		}
-		int result[]= super.pstmt.executeBatch();//½øĞĞÅú´¦Àí
+		int result[]= super.pstmt.executeBatch();//è¿›è¡Œæ‰¹å¤„ç†
 		for(int x=0;x<result.length;x++){
-			if (result[x]==0) {//Ã»ÓĞÊı¾İ½øĞĞ¸üĞÂ /*ÓĞÒ»¸öÊı¾İÃ»ÓĞ±»¸üĞÂ*/
+			if (result[x]==0) {//æ²¡æœ‰æ•°æ®è¿›è¡Œæ›´æ–° /*æœ‰ä¸€ä¸ªæ•°æ®æ²¡æœ‰è¢«æ›´æ–°*/
 				flag=false;
 			}
 		}

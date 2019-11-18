@@ -15,7 +15,7 @@ import net.sf.json.JSONObject;
 
 
 @SuppressWarnings("serial")
-@WebServlet(name="MemberServletBack",urlPatterns="/MemberServletBack/*")
+@WebServlet(name="SplitPageServlet",urlPatterns="/SplitPageServlet/*")
 public class SplitPageServlet extends HttpServlet{
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -29,6 +29,8 @@ public class SplitPageServlet extends HttpServlet{
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+			}else if ("statuslist".equals(status)){
+				this.statuslist(request,response);
 			}
 //			else if ("updateActive".equals(status)) {
 //				path=this.updateActive(request);
@@ -44,7 +46,10 @@ public class SplitPageServlet extends HttpServlet{
 		this.doGet(request, response); 
 	}
 	
-	public String statuslist(HttpServletRequest request){
+	public void statuslist(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html");
 		int currentPage=1;
 		int linesize=5;
 		String column=null;
@@ -65,20 +70,28 @@ public class SplitPageServlet extends HttpServlet{
 			column="mid";//如果column为空，根据mid查找			
 		}
 		if (keyword==null||keyword.equals("")) {
-			keyword=" ";//表示查询全部
+			keyword="";//表示查询全部
 		}
+		JSONObject all=new JSONObject();
 		try {
 			Map<String, Object> map=BackServiceFactory.getInstanceIMemberServiceBack().getListByStatus(status,currentPage, linesize, column, keyword);
-			request.setAttribute("allMembers",map.get("allMembers"));
-			request.setAttribute("allRecoders",map.get("allRecoders"));
+//			request.setAttribute("allMembers",map.get("allMembers"));
+//			request.setAttribute("allRecoders",map.get("allRecoders"));
+			all.put("allMembers", map.get("allMembers"));//查询到的member内容
+			all.put("allRecorders",map.get("allRecorders"));//查询到的总记录数
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		request.setAttribute("currentPage", currentPage);
-		request.setAttribute("linesize",linesize);
-		request.setAttribute("column", column);
-		request.setAttribute("url", "/MemberServletBack/statuslist");
-		return "/pages/back/admin/tables.jsp";
+		all.put("currentPage", currentPage);
+		all.put("lineSize", linesize);
+		all.put("column", column);
+		all.put("keyword", keyword);
+		response.getWriter().print(all);
+//		request.setAttribute("currentPage", currentPage);
+//		request.setAttribute("linesize",linesize);
+//		request.setAttribute("column", column);
+//		request.setAttribute("url", "/MemberServletBack/statuslist");
+//		return "/pages/back/admin/tables.jsp";
 	}
 	
 	public void list(HttpServletRequest request,HttpServletResponse response) throws Exception{

@@ -6,6 +6,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 String listUrl=basePath+"MemberServletBack/list";
 String updateActive=basePath+"MemberServletBack/updateStatus?active";
 String updatelock=basePath+"MemberServletBack/updateStatus?lock";
+//StringBuffer status= request.getRequestURL();
+//String status=request.getParameter("status");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -165,7 +167,8 @@ String updatelock=basePath+"MemberServletBack/updateStatus?lock";
 <!--         </table> -->
 <%--         </c:if> --%>
 <%--     <jsp:include page="split_page_plugin_bars.jsp"/><br> --%>
-    <jsp:include page="list2.jsp"/><br>
+
+    <jsp:include page="ALLlist.jsp"/><br>
     <span><input type="button" value="批量激活" onclick="updateAll(<%=updateActive%>,'all','mid')">&nbsp;&nbsp;&nbsp;&nbsp;
     <input type="button" value="批量锁定" onclick="updateAll(<%=updatelock%>,'all','mid')"></span>
       </div>

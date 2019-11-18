@@ -44,10 +44,11 @@
 						class="fa fa-fw fa-table"></i> <span class="nav-link-text">用户列表</span>
 				</a>
 					<ul class="sidenav-second-level collapse" id="collapselist">
-						<li><a href="/Mshop/pages/back/admin/tables.jsp">用户总列表</a></li>
-						<li><a href="<%=listStatusUrl%>?status=0">锁定用户</a></li>
-						<li><a href="<%=listStatusUrl%>?status=1">激活用户</a></li>
-						<li><a href="<%=listStatusUrl%>?status=2">待激活用户</a></li>
+						<li><a href="/Mshop/pages/back/admin/tables.jsp?status=all">用户总列表</a></li>
+<%--						<li><a href="<%=listStatusUrl%>?status=0">锁定用户</a></li>--%>
+						<li><a href="/Mshop/pages/back/admin/tables.jsp?status=0">锁定用户</a></li>
+						<li><a href="/Mshop/pages/back/admin/tables.jsp?status=1">激活用户</a></li>
+						<li><a href="/Mshop/pages/back/admin/tables.jsp?status=2">待激活用户</a></li>
 					</ul></li>
 				<li class="nav-item" data-toggle="tooltip" data-placement="right"
 					title="Components"><a
@@ -103,7 +104,7 @@
 <!-- 			<div class="card-header"> -->
 <!-- 				<i class="fa fa-table"></i> Data Table Example -->
 <!-- 			</div> -->
-<%-- 			<jsp:include page="list2.jsp" /><br> <span><input --%>
+<%-- 			<jsp:include page="ALLlist.jsp" /><br> <span><input --%>
 <!-- 				type="button" value="批量激活" -->
 <%-- 				onclick="updateAll(<%=updateActive%>,'all','mid')">&nbsp;&nbsp;&nbsp;&nbsp; --%>
 <!-- 				<input type="button" value="批量锁定" -->

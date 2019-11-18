@@ -8,44 +8,44 @@ import cn.jlk.shopdao.IDAO;
 
 public interface Imemberdao extends IDAO<String, Member>{
 	/**
-	 * ÅĞ¶Ï¸ø¶¨µÄmidÓë¸ø¶¨µÄcodeÊÇ·ñÏàÍ¬
-	 * @param mid ÕË»§Òª¼¤»îµÄmid
-	 * @param code ÕË»§¼¤»îÂë
-	 * @return Èç¹ûÓÃ»§IDºÍ¼¤»îÂëÆ¥Åä·µ»Øtrue£¬·ñÔò·µ»Øfalse
+	 * åˆ¤æ–­ç»™å®šçš„midä¸ç»™å®šçš„codeæ˜¯å¦ç›¸åŒ
+	 * @param mid è´¦æˆ·è¦æ¿€æ´»çš„mid
+	 * @param code è´¦æˆ·æ¿€æ´»ç 
+	 * @return å¦‚æœç”¨æˆ·IDå’Œæ¿€æ´»ç åŒ¹é…è¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	 * @throws Exception
 	 */
 	public boolean findByCode(String mid,String code) throws Exception;
 	/**
-	 * ¸üĞÂÓÃ»§µÄ×´Ì¬
-	 * @param mid ÓÃ»§id
-	 * @param status ÓÃ»§×´Ì¬£¨0±íÊ¾Ëø¶¨£¬1±íÊ¾¼¤»î£¬2±íÊ¾´ı¼¤»î£©
-	 * @return ¸üĞÂ³É¹¦·µ»Øtrue£¬·ñÔò·µ»Øfalse
+	 * æ›´æ–°ç”¨æˆ·çš„çŠ¶æ€
+	 * @param mid ç”¨æˆ·id
+	 * @param status ç”¨æˆ·çŠ¶æ€ï¼ˆ0è¡¨ç¤ºé”å®šï¼Œ1è¡¨ç¤ºæ¿€æ´»ï¼Œ2è¡¨ç¤ºå¾…æ¿€æ´»ï¼‰
+	 * @return æ›´æ–°æˆåŠŸè¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	 * @throws Exception
 	 */
     public boolean doUpdatestatus(String mid,Integer status) throws Exception;
     /**
-     * ¸ù¾İÓÃ»§×´Ì¬Í³¼ÆÈËÊı
-     * @param status ÓÃ»§×´Ì¬
-     * @return ·µ»ØÍ³¼ÆÍêµÄÈËÊı
+     * æ ¹æ®ç”¨æˆ·çŠ¶æ€ç»Ÿè®¡äººæ•°
+     * @param status ç”¨æˆ·çŠ¶æ€
+     * @return è¿”å›ç»Ÿè®¡å®Œçš„äººæ•°
      * @throws Exception 
      */
     public Integer doCountStatus(Integer status,String column,String keyword) throws Exception;
     /**
-     * ÅúÁ¿¸ü¸ÄÓÃ»§×´Ì¬
-     * @param mid ÓÃ»§ID
-     * @param status ÓÃ»§×´Ì¬
-     * @return ĞŞ¸Ä³É¹¦·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * æ‰¹é‡æ›´æ”¹ç”¨æˆ·çŠ¶æ€
+     * @param mid ç”¨æˆ·ID
+     * @param status ç”¨æˆ·çŠ¶æ€
+     * @return ä¿®æ”¹æˆåŠŸè¿”å›trueï¼Œå¦åˆ™è¿”å›false
      * @throws Exception
      */
     public boolean doUpdateByStatus(Set<String> all,Integer status) throws Exception;
     /**
-     * ¸ù¾İÓÃ»§×´Ì¬·ÖÒ³
-     * @param status ÓÃ»§×´Ì¬·ÖÎª3ÖÖ£¨0,1,2£©
-     * @param currentPage µ±Ç°ËùÔÚÒ³
-     * @param linesize Ã¿Ò³ÏÔÊ¾ĞĞÊı
-     * @param column Ä£ºı²éÑ¯ÁĞ
-     * @param keyword Ä£ºı²éÑ¯¹Ø¼ü×Ö
-     * @return ²éÑ¯³É¹¦·µ»Ølist¼¯ºÏ
+     * æ ¹æ®ç”¨æˆ·çŠ¶æ€åˆ†é¡µ
+     * @param status ç”¨æˆ·çŠ¶æ€åˆ†ä¸º3ç§ï¼ˆ0,1,2ï¼‰
+     * @param currentPage å½“å‰æ‰€åœ¨é¡µ
+     * @param linesize æ¯é¡µæ˜¾ç¤ºè¡Œæ•°
+     * @param column æ¨¡ç³ŠæŸ¥è¯¢åˆ—
+     * @param keyword æ¨¡ç³ŠæŸ¥è¯¢å…³é”®å­—
+     * @return æŸ¥è¯¢æˆåŠŸè¿”å›listé›†åˆ
      * @throws Exception
      */
     public List<Member> findAllByStatus(Integer status,Integer currentPage,

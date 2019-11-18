@@ -25,10 +25,10 @@ public class AdminLoginFilter implements Filter{
 			FilterChain filterChain) throws IOException, ServletException {
 		HttpServletRequest request=(HttpServletRequest) servletRequest ;
 		HttpSession ses=request.getSession();
-		if (ses.getAttribute("aid")!=null) {//²»Îª¿Õ±íÊ¾µÇÂ¼¹ı
+		if (ses.getAttribute("aid")!=null) {//ä¸ä¸ºç©ºè¡¨ç¤ºç™»å½•è¿‡
 			filterChain.doFilter(servletRequest,servletResponse);
 		}else {
-			request.setAttribute("msg", "Äú»¹Ã»ÓĞµÇÂ¼£¬ÇëÏÈµÇÂ¼ºó²Ù×÷£¡");
+			request.setAttribute("msg", "æ‚¨è¿˜æ²¡æœ‰ç™»å½•ï¼Œè¯·å…ˆç™»å½•åæ“ä½œï¼");
 			request.setAttribute("url", "/Mshop/pages/back/login.jsp");
 			request.getRequestDispatcher("/pages/forward.jsp").forward(servletRequest, servletResponse);
 		}

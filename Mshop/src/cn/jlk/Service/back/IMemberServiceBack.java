@@ -5,46 +5,44 @@ import java.util.Set;
 
 public interface IMemberServiceBack {
 	/**
-	 * ½øĞĞÈ«²¿ÓÃ»§µÄ·ÖÒ³Êı¾İÏÔÊ¾£¬Òªµ÷ÓÃImemberdaoÖĞµÄÈçÏÂ·½·¨£º<br>
-	 * <li> µ÷ÓÃImemberdaoÖĞµÄfindAll()·½·¨£¬²éÑ¯³öÈ«²¿µÄÊı¾İ</li>
-	 * <li> µ÷ÓÃImemberdaoÖĞµÄgetAllCount()·½·¨£¬Í³¼ÆÈ«²¿Êı¾İÁ¿</li> 
-	 * @param cloumn Ä£ºı²éÑ¯ÁĞ
-	 * @param keyword Ä£ºı²éÑ¯¹Ø¼ü×Ö
-	 * @param currenPage µ±Ç°ËùÔÚÒ³
-	 * @param linesize Ã¿Ò³ÏÔÊ¾µÄÊı¾İÁ¿
-	 * @return ÓÉÓÚÒª·µ»ØµÄÊı¾İÓĞlistºÍIntegerÁ½ÖÖÀàĞÍ£¬ËùÒÔÊ¹ÓÃMap·µ»Ø£¬°üº¬ÈçÏÂÄÚÈİ£º<br>
-	 *     <li>key=allMembers¡¢value=findAllSplit()</li>
-	 *     <li>key=allRecoders¡¢value=getAllcount()</li>
+	 * è¿›è¡Œå…¨éƒ¨ç”¨æˆ·çš„åˆ†é¡µæ•°æ®æ˜¾ç¤ºï¼Œè¦è°ƒç”¨Imemberdaoä¸­çš„å¦‚ä¸‹æ–¹æ³•ï¼š<br>
+	 * <li> è°ƒç”¨Imemberdaoä¸­çš„findAll()æ–¹æ³•ï¼ŒæŸ¥è¯¢å‡ºå…¨éƒ¨çš„æ•°æ®</li>
+	 * <li> è°ƒç”¨Imemberdaoä¸­çš„getAllCount()æ–¹æ³•ï¼Œç»Ÿè®¡å…¨éƒ¨æ•°æ®é‡</li> 
+	 * @param column æ¨¡ç³ŠæŸ¥è¯¢åˆ—
+	 * @param keyword æ¨¡ç³ŠæŸ¥è¯¢å…³é”®å­—
+	 * @param currentPage å½“å‰æ‰€åœ¨é¡µ
+	 * @param linesize æ¯é¡µæ˜¾ç¤ºçš„æ•°æ®é‡
+	 * @return ç”±äºè¦è¿”å›çš„æ•°æ®æœ‰listå’ŒIntegerä¸¤ç§ç±»å‹ï¼Œæ‰€ä»¥ä½¿ç”¨Mapè¿”å›ï¼ŒåŒ…å«å¦‚ä¸‹å†…å®¹ï¼š<br>
+	 *     <li>key=allMembersã€value=findAllSplit()</li>
+	 *     <li>key=allRecodersã€value=getAllcount()</li>
 	 * @throws Exception
 	 */
 	public Map<String , Object> list(int currentPage,int linesize,
 			 String column,String keyword) throws Exception;
 	/**
-	 * ÅúÁ¿ÓÃ»§×´Ì¬¼¤»î
-	 * @param status status=1Ê±Îª¼¤»î×´Ì¬
-	 * @return ¼¤»î³É¹¦·µ»Øtrue£¬·ñÔò·µ»Øfalse
+	 * æ‰¹é‡ç”¨æˆ·çŠ¶æ€æ¿€æ´»
+	 * @return æ¿€æ´»æˆåŠŸè¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	 * @throws Exception
 	 */
 	public boolean updateActive(Set<String> all) throws Exception;
 	/**
-	 * ÅúÁ¿ÓÃ»§×´Ì¬Ëø¶¨
-	 * @param status status=0Ê±ÎªËø¶¨×´Ì¬
-	 * @return Ëø¶¨³É¹¦·µ»Øtrue£¬·ñÔò·µ»Øfalse
+	 * æ‰¹é‡ç”¨æˆ·çŠ¶æ€é”å®š
+	 * @return é”å®šæˆåŠŸè¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	 * @throws Exception
 	 */
 	public boolean updateLock(Set<String> all) throws Exception;
 	/**
-	 * ¸ù¾İÓÃ»§×´Ì¬½øĞĞ·ÖÒ³Êı¾İÏÔÊ¾£¬Òªµ÷ÓÃImemberdaoÖĞµÄÈçÏÂ·½·¨£º<br>
-	 * <li> µ÷ÓÃImemberdaoÖĞµÄfindAllByStatus()·½·¨£¬¸ù¾İÓÃ»§×´Ì¬²éÑ¯³öÈ«²¿µÄÊı¾İ</li>
-	 * <li> µ÷ÓÃImemberdaoÖĞµÄdoCountStatus()·½·¨£¬Í³¼Æ¸÷¸ö×´Ì¬Êı¾İÁ¿</li>
-	 * @param status ÓÃ»§×´Ì¬
-	 * @param cloumn Ä£ºı²éÑ¯ÁĞ
-	 * @param keyword Ä£ºı²éÑ¯¹Ø¼ü×Ö
-	 * @param currenPage µ±Ç°ËùÔÚÒ³
-	 * @param linesize Ã¿Ò³ÏÔÊ¾µÄÊı¾İÁ¿
-	 * @return ÓÉÓÚÒª·µ»ØµÄÊı¾İÓĞlistºÍIntegerÁ½ÖÖÀàĞÍ£¬ËùÒÔÊ¹ÓÃMap·µ»Ø£¬°üº¬ÈçÏÂÄÚÈİ£º<br>
-	 *     <li>key=allMembers¡¢value=findAllByStatus()</li>
-	 *     <li>key=allRecoders¡¢value=doCountStatus()</li>
+	 * æ ¹æ®ç”¨æˆ·çŠ¶æ€è¿›è¡Œåˆ†é¡µæ•°æ®æ˜¾ç¤ºï¼Œè¦è°ƒç”¨Imemberdaoä¸­çš„å¦‚ä¸‹æ–¹æ³•ï¼š<br>
+	 * <li> è°ƒç”¨Imemberdaoä¸­çš„findAllByStatus()æ–¹æ³•ï¼Œæ ¹æ®ç”¨æˆ·çŠ¶æ€æŸ¥è¯¢å‡ºå…¨éƒ¨çš„æ•°æ®</li>
+	 * <li> è°ƒç”¨Imemberdaoä¸­çš„doCountStatus()æ–¹æ³•ï¼Œç»Ÿè®¡å„ä¸ªçŠ¶æ€æ•°æ®é‡</li>
+	 * @param status ç”¨æˆ·çŠ¶æ€
+	 * @param column æ¨¡ç³ŠæŸ¥è¯¢åˆ—
+	 * @param keyword æ¨¡ç³ŠæŸ¥è¯¢å…³é”®å­—
+	 * @param currentPage å½“å‰æ‰€åœ¨é¡µ
+	 * @param linesize æ¯é¡µæ˜¾ç¤ºçš„æ•°æ®é‡
+	 * @return ç”±äºè¦è¿”å›çš„æ•°æ®æœ‰listå’ŒIntegerä¸¤ç§ç±»å‹ï¼Œæ‰€ä»¥ä½¿ç”¨Mapè¿”å›ï¼ŒåŒ…å«å¦‚ä¸‹å†…å®¹ï¼š<br>
+	 *     <li>key=allMembersã€value=findAllByStatus()</li>
+	 *     <li>key=allRecodersã€value=doCountStatus()</li>
 	 * @throws Exception
 	 */
 	public Map<String, Object> getListByStatus(int status,int currentPage,int linesize,
